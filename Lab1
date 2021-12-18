@@ -1,0 +1,30 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int a = 5;
+        int b = 10;
+        int m = 25;
+        int n = 30;
+
+        final int C = 2;
+
+        float s = 0;
+
+        if (n < a || m < b) {
+            System.out.println("S = " + s);
+        } else if (a > -C || n < -C) {
+
+            for (char i =(char) a; i <= n; i++) {
+                int signifier = i + C;
+                for (char j =(char) b; j <= m; j++) {
+                    s += (float) (i * j) / signifier;
+                }
+            }
+            System.out.println("S = " + s);
+        } else {
+            System.out.println("Error. Zero division is not allowed");
+        }
+    }
+}
