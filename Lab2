@@ -1,0 +1,54 @@
+package com.company;
+
+public class Lab2 {
+
+    public static void main(String[] args) {
+        int a = 3;
+        long[][] B = new long[][] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+
+        long[][] C = new long[3][];
+
+        short sumEven = 0;
+        short sumOdd = 0;
+
+        // First task
+        System.out.println("First task");
+
+        for (int i = 0; i < B.length; i++) {
+            C[i] = new long[B[i].length];
+            for (int j = 0; j < B[i].length; j++) {
+                C[i][j] = (long) (a * B[i][j]);
+                System.out.print(C[i][j] + "\t");
+            }
+            System.out.println();
+        }
+
+        // Second task
+        System.out.println("Second task");
+        int sum1 = 0;
+        int sum2 = 0;
+
+        for (int j = 1; j < B.length; j += 2) {
+            long max = C[0][j];
+            for (int i = 1; i < B.length; i++) {
+                if (C[i][j] > max) {
+                    max = C[i][j];
+                }
+            }
+            sum1 += max;
+        }
+
+        for (int j = 0; j < B.length; j += 2) {
+            long min = C[0][j];
+            for (int i = 1; i < B.length; i++) {
+                if (C[i][j] < min)
+                    min = B[i][j];
+            }
+            sum2 += min;
+        }
+
+        System.out.println();
+        System.out.println("The sum of the largest elements in the columns of a matrix with even numbers: " + sum1);
+        System.out.println("The sum of the smallest elements in the columns of the matrix with odd numbers: " + sum2);
+    }
+}
